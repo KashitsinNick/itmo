@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Points</title>
+<style>
+#map-canvas 
+{
+ height: 600px;
+ width: 800px;
+ margin:0 auto;
+ padding: 10px;
+ border: 7px #E0FFFF groove;
+ background-position: center 64px;
+}
+
+
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&s.."></script>
+<link rel='stylesheet' type='text/css' href='mystyle.css'>
+<script>
+
+
+function initialize() {
+var myLatlng = new google.maps.LatLng(59.97253889, 30.30263722);
+var myLatlng2 = new google.maps.LatLng(58.05481, 38.756405);
+var mapOptions = {
+zoom : 4,
+center : myLatlng
+};
+
+map = new google.maps.Map(document.getElementById('map-canvas'),
+mapOptions);
+
+var contentString = '<div id="content">'
++ '<div id="siteNotice">'
++ '</div>'
++ '<h1 id="firstHeading" class="firstHeading">Санкт-Петербург</h1>'
++ '<div id="bodyContent">'
++ '<p>Город в котором я живу с 2012. '
++ '<p>Немного фотографий  <a href="http://kudago.com/spb/attractions/">'
++ 'города</a>.</p>' + '</div>' + '</div>';
+
+var contentString2 = '<div id="content">'
++ '<div id="siteNotice">'
++ '</div>'
++ '<h1 id="firstHeading" class="firstHeading">Рыбинск</h1>'
++ '<div id="bodyContent">'
++ '<p>Город в котором я жил до 2012.</p>'
++ '<p>Немного фотографий <a href="http://venividi.ru/node/21558">'
++ ' города</a>.</p>' + '</div>' + '</div>';
+
+var infowindow = new google.maps.InfoWindow({
+content : contentString
+});
+
+var marker = new google.maps.Marker({
+position : myLatlng,
+map : map,
+title : 'Точки'
+});
+google.maps.event.addListener(marker, 'click', function() {
+infowindow.open(map, marker);
+});
+
+createMarker(myLatlng2, contentString2, 'Test');
+}
+
+function createMarker(myLatlng, contentString, mytitle) {
+marker = new google.maps.Marker({
+position : myLatlng,
+map : map,
+title : mytitle
+});
+
+infowindow = new google.maps.InfoWindow({
+content : contentString
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+infowindow.open(map, marker);
+});
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+<a href="MainPage.html" class="button1"></a>
+<div id="map-canvas" ></div>
+
+</body>
+</html>

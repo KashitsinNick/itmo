@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Практические задания 4.1-4.2</title>
+<style>
+	H1 { 
+   margin: 0; padding: 0;
+    font-size: 250%; /* Размер шрифта */
+    font-family: Haettenschweiler; /* Семейство шрифта */
+    color: rgba(0, 0, 0, 0.7); /* Цвет текста */
+   }
+   
+   p { 
+   margin: 0; padding: 0;
+    font-size: 100%; /* Размер шрифта */
+    font-family: Courier New; /* Семейство шрифта */
+    color: #E0FFFF; /* Цвет текста */
+   }
+      
+   </style>
+</head>
+<script src="jquery-2.1.4.min.js"></script>
+<link rel='stylesheet' type='text/css' href='mystyle.css'>
+
+<script>
+	function salon(id) {
+		id = parseInt(id);
+		$('#result').load("/seventh?flag=1&salon=" + id);
+	}
+</script>
+<script>
+	$(function() {
+		$('#calc').click(function() {
+			$('#result').load("/seventh?flag=0");
+		});
+	});
+</script>
+
+<body>
+<a href="MainPage.html" class="button1"></a>
+<span>
+	<div>
+		<h1>Просмотр магазинов машин</h1>
+			<select onchange="salon(this.value)">
+				<option selected="selected" disabled="disabled">Выберите
+					компанию</option>
+				<option value="0">Официальный дилер Renault</option>
+				<option value="1">Официальный дилер Hyundai</option>
+				<option value="2">Официальный дилер Toyota</option>
+				<option value="3">Официальный дилер Mazda</option>
+				<option value="4">Официальный дилер Volkswagen</option>
+				<option value="5">Официальный дилер Swed-mobil</option>
+				<option value="6">Официальный дилер BMW</option>
+			</select>
+		<br>
+		<br>
+		<div id="calc">
+			<a class= "button" >Очистить</a>
+		</div>
+	<br>
+		<span id="result"></span>
+	</div>
+</span>
+</body>
+</html>

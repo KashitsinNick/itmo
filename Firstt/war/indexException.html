@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Исключения</title>
+<style>
+	H1 { 
+   margin: 0; padding: 0;
+    font-size: 250%; /* Размер шрифта */
+    font-family: Haettenschweiler; /* Семейство шрифта */
+    color: rgba(0, 0, 0, 0.7); /* Цвет текста */
+   }
+    
+   p { 
+   margin: 0; padding: 0;
+    font-size: 100%; /* Размер шрифта */
+    font-family: Courier New; /* Семейство шрифта */
+    color: #E0FFFF; /* Цвет текста */
+   }
+      
+   </style>
+</head>
+<script src="jquery-2.1.4.min.js"></script>
+<link rel='stylesheet' type='text/css' href='mystyle.css'>
+<meta charset="UTF-8">
+
+<script>
+    
+
+	$(document).ready(function(){
+	$('#knop').on('click',function(){
+		$('#rez').load('/exception?flag=1');
+			});
+}
+		); 
+</script>
+ <script>
+	$(document).ready(function(){
+	$('#knop2').on('click',function(){
+		$('#rez2').load('/exception?flag=2&vopr='+$('#otv').val()+'&vopros='+$('#trash').val());
+			});
+}
+		); 
+</script>
+<body>
+<a href="MainPage.html" class="button1"></a>
+	<span>
+		<h1>Исключения</h1>
+ 		<br>
+			<div><a href="#" class= "color2" id="knop"  >Получить вопрос</a>
+    		<div id="rez"></div><br>
+   			 </div>
+    	<br>
+    	  <div><input type="text"  id="otv">
+   			  <a href="#" class= "button" id="knop2"  >Проверить ответ</a>
+   		 </div>
+   	 	<div id="rez2">
+   		</div>   
+	</span>
+</body>
+</html>

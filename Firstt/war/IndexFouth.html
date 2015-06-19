@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Практические задания 4.1-4.2</title>
+<style>
+	H1 { 
+   margin: 0; padding: 0;
+    font-size: 250%; /* Размер шрифта */
+    font-family: Haettenschweiler; /* Семейство шрифта */
+    color: rgba(0, 0, 0, 0.7); /* Цвет текста */
+   }
+   
+   p { 
+   margin: 0; padding: 0;
+    font-size: 100%; /* Размер шрифта */
+    font-family: Courier New; /* Семейство шрифта */
+    color: #E0FFFF; /* Цвет текста */
+   }
+      
+   </style>
+</head>
+<script src="jquery-2.1.4.min.js"></script>
+<link rel='stylesheet' type='text/css' href='mystyle.css'>
+
+<script>
+ 
+  $( function() {
+    $('#calc').click( function() {
+    	var var1 = $('#var1').val();
+    	var var2 = $('#var2').val();
+    	
+    $('#result').load( "/fifth?var1="+var1+"&var2="+var2);
+    } );    
+  } );
+ 
+   $( function() {
+    $('#calc2').click( function() {
+    	var var3 = $('#var3').val();
+    	var var4 = $('#var4').val();
+    	
+    $('#result2').load( "/sixth?var3="+var3+"&var4="+var4);
+    } );    
+  } );
+
+</script>
+
+<body>
+<a href="MainPage.html" class="button1"></a>
+	<span>
+		<h1>Практическое задание 4.1</h1>
+
+		<form>
+			<p>Введите два числа</p>
+			<p>(в промежутке от 0 до 65535 значения с разницей не более 1000):</p>
+			<input placeholder="от" size=5 id="var1" type="text" /> <input
+				placeholder="до" size=5 id="var2" type="text" />
+		</form>
+
+		<br>
+			<div id="calc">
+				<a class= "button" >Вычислить</a>
+			</div>
+		<br>
+		<p>
+		<span class= "color" id="result"></span>
+		</p>
+	
+		<h1>Практическое задание 4.2</h1>
+
+		<form>
+			<p>Введите два числа</p>
+			<p>(в промежутке от 0 до 65535 значения с разницей не более 1000):</p>
+			<input placeholder="от" size=5 id="var3" type="text" /> 
+			<input placeholder="до" size=5 id="var4" type="text" />
+		</form>
+
+			<br>
+	<div id="calc2">
+		<a class= "button" >Вычислить</a>
+	</div>
+				<br>
+				<p>
+					<span class= "color" id="result2"></span>
+						</p>
+					</span>
+</body>
+</html>
